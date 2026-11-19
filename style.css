@@ -1,0 +1,572 @@
+/* Gemensam stilmall för webbplatsens fyra HTML-sidor.
+   Färger, typografi och layout är valda för att skapa
+   en enhetlig design inspirerad av PRE-hästens historia
+   och eleganta uttryck. */
+   /* Navigationsmenyn använder Flexbox för att placera
+   länkarna horisontellt och centrera dem.
+   Gap skapar jämna mellanrum mellan länkarna. */
+nav ul{
+        list-style: none;
+         display: flex;
+         justify-content: center;
+         gap: 30px;
+    }
+  
+body {
+    margin: 0;
+    background-color: #F7F3ED;
+}
+/* Sidhuvudet har en ljus bakgrund och centrerad text
+   för att skapa ett stilrent och enhetligt uttryck.
+   Padding ger luft runt rubriken och navigationsmenyn. */
+header {
+    text-align: center;
+    padding: 28px 20px;
+    background-color: #F7F3ED;
+}
+h1 {
+    color: #30271F;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 5px;
+}
+
+nav a {
+    color: #30271F;
+    text-decoration: none;
+    font-size: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    border-bottom-color: #A58B78;
+}
+
+nav a:focus-visible {
+    outline: 2px solid #30271F;
+    outline-offset: 5px;
+}
+
+/* Huvudbilden fyller hela sidans bredd.
+   Object-fit gör att bilden beskärs utan att förvrängas,
+   medan object-position bestämmer vilken del som syns. */
+.hero-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center 35%;
+}
+/* Introduktionen har en begränsad textbredd för att
+   göra innehållet lättläst. Marginaler och padding
+   skapar luft runt texten och ger en balanserad layout. */
+
+.intro {
+    max-width: 750px;
+    margin: 55px auto 35px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #30271F;
+}
+
+.intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #514238;
+}
+
+
+.article {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+#omoss p {
+    max-width: 720px;
+
+}
+.article h2 {
+    font-size: 36px;
+    color: #30271F;
+    margin-bottom: 30px;
+}
+
+.article h3 {
+    font-size: 25px;
+    color: #30271F;
+    margin-top: 40px;
+}
+
+.article p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+/* CSS Grid placerar artikelns innehåll i en kolumn.
+   Gap skapar mellanrum mellan elementen. */
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Faktarutan lyfter fram viktig information med en
+   avvikande bakgrundsfärg och en dekorativ vänsterkant.
+   Padding skapar luft mellan texten och rutans kanter. */
+.fact-box {
+    background-color: #EAE2D8;
+    border-left: 4px solid #A58B78;
+    padding: 35px;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(48, 39, 31, 0.06);
+}
+
+.fact-box h3 {
+    color: #30271F;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.fact-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+/* Begränsar bildsektionens bredd och centrerar den
+   för att hästbilderna ska få en balanserad placering
+   tillsammans med artikeltexten. */
+.horse-photo {
+    max-width: 550px;
+    margin: 30px auto;
+}
+
+.horse-photo img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.horse-photo figcaption {
+    font-size: 13px;
+    color: #786B60;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+}
+.decorative-line {
+    width: 250px;
+    height: 3px;
+    background-color: #A58B78;
+    margin: 25px 0 35px;
+}
+/* Sidfoten avslutar varje sida med en ljusare bakgrund.
+   Centrerad text och extra marginal upptill skapar
+   en tydlig visuell avslutning på innehållet. */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    background-color: #EAE2D8;
+    color: #30271F;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+/* Responsiv design för skärmar som är högst 600px breda.
+   Navigationsmenyn kan radbrytas och textstorlekar,
+   bildhöjder och marginaler anpassas för mobilvisning. */
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 4px;
+    }
+
+    h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .article {
+        margin: 30px auto;
+        padding: 0 18px;
+    }
+
+    .article h2 {
+        font-size: 28px;
+    }
+
+    .article p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .article-image img {
+        height: auto;
+        object-position: 0% center;
+    }
+
+    .horse-photo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: 30% center;
+    }
+
+    .fact-box {
+        padding: 20px;
+    }
+
+    .hero-image {
+        height: 280px;
+    }
+}
+/* Knappen används för att visa och dölja extra fakta
+   på sidan Ursprung. Färgen ändras vid hover för att
+   ge besökaren visuell återkoppling. */
+#fakta-knapp {
+    display: block;
+    width: 220px;
+    margin: 30px auto;
+    padding: 15px 25px;
+    background-color: #30271F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#fakta-knapp:hover {
+    background-color: #1e1914;
+}
+#fakta-knapp:focus-visible {
+    outline: 3px solid #A58B78;
+    outline-offset: 4px;
+}
+[hidden] {
+    display: none !important;
+}
+/* Bildspelets layout är centrerad och har en begränsad bredd.
+   Flexbox placerar bilden och navigationsknapparna bredvid varandra.
+   Bilderna har en mjuk övergång när JavaScript byter bild. */
+.gallery {
+    max-width: 1000px;
+    margin: 35px auto 70px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 32px;
+    color: #30271F;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#gallery-image {
+    width: 70%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.gallery-container button {
+    background-color: #514238;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.gallery-container button:hover {
+    background-color: #30271F;
+}
+.gallery-container button:focus-visible {
+    outline: 3px solid #30271F;
+    outline-offset: 4px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #EAE2D8;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background-color: #A58B78;
+}
+
+@media (max-width: 600px) {
+    .gallery-container {
+        gap: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #gallery-image {
+        width: 65%;
+        min-width: 0;
+        height: 230px;
+    }
+
+    .gallery-container button {
+        padding: 8px 5px;
+        font-size: 13px;
+    }
+
+    .gallery h2 {
+        font-size: 24px;
+    }
+}
+
+#gallery-caption {
+    margin-top: 15px;
+    font-size: 15px;
+    font-style: italic;
+    color: #514238;
+    letter-spacing: 1px;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    #ursprung .article-image img {
+        object-position: left center;
+    }
+}
+figcaption {
+  font-size: 12px;
+  color: #514238;;
+  margin-top: 5px;
+}
+
+figcaption a {
+  color: #514238;;
+  text-decoration: underline;
+}
+
+.video-container {
+    max-width: 650px;
+    margin: 35px auto;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Stilren källförteckning */
+
+.bildkallor {
+    max-width: 900px;
+    margin: 45px auto 30px;
+    padding: 20px 25px;
+    background-color: #f7f3ee;
+    border-top: 1px solid #d9cec2;
+}
+
+.bildkallor h2 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #27201c;
+    margin-bottom: 15px;
+}
+
+.bildkallor p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #27201c;
+    margin: 5px 0;
+}
+
+.bildkallor a {
+    color: #27201c;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.bildkallor a:hover {
+    color: #27201c;
+}
+
+.bildkallor a:focus-visible {
+    outline: 2px solid #27201c;
+    outline-offset: 3px;
+}
+
+
+
+/* Bilder på Kända PRE-hästar */
+
+.hast img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 420px;
+    margin: 25px auto;
+    border-radius: 8px;
+}
+
+
+/* Upptäck mer – länkar till webbplatsens undersidor */
+
+.upptack {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.upptack-etikett {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #A58B78;
+    font-weight: bold;
+}
+
+.upptack h2 {
+    font-size: 36px;
+    color: #30271F;
+    margin: 15px 0;
+}
+
+.upptack-intro {
+    font-size: 17px;
+    color: #514238;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.upptack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));    
+    gap: 20px;
+}
+
+.upptack-kort {
+    display: block;
+    background-color: #EAE2D8;
+    padding: 35px 25px;
+    border-radius: 8px;
+    text-align: left;
+    text-decoration: none;
+    color: #30271F;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.upptack-kort span {
+    font-size: 13px;
+    color: #786B60;
+}
+
+.upptack-kort h3 {
+    font-size: 25px;
+    margin: 20px 0 12px;
+}
+
+.upptack-kort p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.upptack-kort:hover {
+    transform: translateY(-5px);
+    background-color: #DDD1C4;
+}
+
+.upptack-kort:focus-visible {
+    outline: 3px solid #A58B78;
+    outline-offset: 4px;
+}
+
+/* Anpassning för mobilskärmar */
+
+@media (max-width: 768px) {
+        .upptack {
+        margin: 50px auto;
+        padding: 0 18px;
+    }
+
+    .upptack h2 {
+        font-size: 28px;
+    }
+
+    .upptack-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .upptack-kort {
+        padding: 25px;
+    }
+}
+
+/* Presentation av kända PRE-hästar */
+
+.hast {
+    padding: 35px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #D9CEC2;
+}
+
+.hast h3 {
+    font-size: 30px;
+    color: #30271F;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.hast p {
+    max-width: 700px;
+    line-height: 1.8;
+    color: #514238;
+}
