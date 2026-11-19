@@ -469,7 +469,7 @@ figcaption a {
 .upptack-etikett {
     font-size: 12px;
     letter-spacing: 3px;
-    color: #A58B78;
+    color: #332d29;
     font-weight: bold;
 }
 
@@ -481,7 +481,7 @@ figcaption a {
 
 .upptack-intro {
     font-size: 17px;
-    color: #514238;
+    color: #30271F;
     margin-bottom: 40px;
     line-height: 1.7;
 }
@@ -505,7 +505,7 @@ figcaption a {
 
 .upptack-kort span {
     font-size: 13px;
-    color: #786B60;
+    color: #332d29;
 }
 
 .upptack-kort h3 {
@@ -524,7 +524,7 @@ figcaption a {
 }
 
 .upptack-kort:focus-visible {
-    outline: 3px solid #A58B78;
+    outline: 3px solid #332d29;
     outline-offset: 4px;
 }
 
